@@ -13,7 +13,7 @@ import { TasksComponent } from "./tasks/tasks.component";
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  selectedUserId: string | null = null;
+  selectedUserId?: string;
 
   getRandomUser() {
     const randomIndex = Math.floor(Math.random() * this.users.length);
