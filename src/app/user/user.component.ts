@@ -1,17 +1,5 @@
 import { Component, EventEmitter, Input, Output, } from '@angular/core';
-
-// type User = {
-//   id: string;
-//   name: string;
-//   avatar: string;
-// };
-
-interface User {
-  id: string; // Unique identifier for the user
-  name: string; // Name of the user
-  avatar: string; // Avatar image filename
-} 
-
+import { User } from './user.model';
 @Component({
   selector: 'app-user',
   standalone: true,
