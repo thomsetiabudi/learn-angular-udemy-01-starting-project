@@ -13,20 +13,18 @@ import { TasksComponent } from "./tasks/tasks.component";
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  selectedUser: { id: string; name: string; avatar: string } | undefined;
+  selectedUserId: string | null = null;
 
   getRandomUser() {
     const randomIndex = Math.floor(Math.random() * this.users.length);
     return this.users[randomIndex];
   }
 
+  get selectedUser() {
+    return this.users.find(user => user.id === this.selectedUserId) || null;
+  }
+
   onSelectUser(id: string) {
-    this.selectedUser = this.users.find(user => user.id === id);
-    if (this.selectedUser) {
-      console.log('Selected User:', this.selectedUser);
-    }
-    else {
-      console.log('User not found');
-    }
+    this.selectedUserId = id;
   }
 }
